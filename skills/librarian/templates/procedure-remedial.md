@@ -33,6 +33,10 @@ recorded: "<YYYY-MM-DD>"
 
 <State what to question about truth stability, applicability, and continued relevance; identify change/review triggers and expected agent treatment. Explain material uncertainty, including provisional classification, here.>
 
+## Why we did it this way
+
+<State the reasons for this solution, the rejected alternatives and context that motivated this decision. Include any information about the log term solution including timeline, nature and confidence>
+
 ## See also
 
 <Optional related leaves, each with a Markdown link and explanation of the relationship. Remove this placeholder or omit the section if none.>
