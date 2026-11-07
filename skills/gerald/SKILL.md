@@ -51,37 +51,29 @@ If an exclusion would materially distort the answer, explain why and propose exp
 
 ### Record keeping — RK
 
-Use record keeping to control which layers of the exchange persist: the conversation's context, its question-and-answer history, its current state, and proposed reusable knowledge. Select the layers using the RK score below. Keep records concise and distinguish user requirements, agreed decisions, proposals, assumptions, and observations. Recording more does not by itself require greater rigor or closure.
+Use record keeping to control which documents are maintained and how much continuity they preserve. Keep records concise and distinguish user requirements, agreed decisions, proposals, assumptions, and observations. Recording more does not by itself require greater rigor or closure.
 
-#### Levels and classification examples
+#### Levels and document mapping
 
-| Score | Active layers | Example |
+| Score | Documents | Example |
 | --- | --- | --- |
-| **RK1** | None | A passing exchange requiring no maintained record. |
-| **RK2** | 1 — Conversation | A discussion worth remembering by its topic and overall summary. |
-| **RK3** | 1 — Conversation; 3 — State of things | Planning or exploration that must resume with a clear account of what is settled and what remains. |
-| **RK4** | 1 — Conversation; 3 — State of things; 2 — Question log | Work requiring both an up-to-date task list and a chronological account of questions and their consequences. |
-| **RK5** | 1, 2, 3, and 4 — Knowledge summary at the end | Work whose findings should be proposed to the user as reusable knowledge after the exchange. |
+| **RK1** | No maintained records; artifacts only when requested or required by the task. | A passing exchange requiring no maintained record. |
+| **RK2** | `state-of-things.md`: topic and conversation summary; task artifacts when needed. | A discussion worth remembering in outline. |
+| **RK3** | `state-of-things.md`: summary plus current questions, tasks, answers, and statuses; task artifacts when needed. | Work that must resume with a clear account of what is settled and what remains. |
+| **RK4** | `state-of-things.md`; `inquiry-log.md`; task artifacts when needed. | Work requiring both a current account and a chronological question-and-answer history. |
+| **RK5** | `state-of-things.md`; `inquiry-log.md`; task artifacts when needed, including `knowledge-summary.md` at the end. | Work whose findings should be proposed as reusable knowledge for user approval. |
 
-At RK1, maintain no record under this dimension. This does not cancel an explicit request to save an artifact or obligations imposed by the environment.
+Artifact creation follows the task at every RK level; the score does not require gratuitous code, plots, or reports. RK5 additionally requires the concise knowledge-summary proposal described under Artifacts.
 
-#### Layer 1 — Conversation
+#### State of things
 
-Keep the general topic and a concise summary of the conversation. Include its purpose, important context, direction, and substantive decisions or changes of direction. Keep the summary current rather than transcribing each turn. Preserve enough context for a later reader to understand what the exchange concerned without reading its entire history.
+Maintain a mutable, human-readable `state-of-things.md`, organized for humans and agents alike. Make it understandable without consulting the inquiry log. Include the general topic and a concise conversation summary: purpose, important context, direction, and substantive decisions or changes of direction. Keep this account **current** and **concise**; it reflects the state of things rather than the path that led to it. 
 
-At RK2, use `conversation.md`. At RK3 and above, the conversation summary may be a section in `state-of-things.md` so the two layers can share one document.
+Let the RK level determine how much state must persist, and let the other scores shape its contents: breadth determines the scope represented, depth the explanatory detail needed, rigor the evidence and uncertainty to preserve and address, and closure the completion criteria and unfinished obligations to track. Do not infer a required task register from the filename alone. At RK2, a topic and summary suffice; higher scores in other dimensions do not silently raise RK. If their needs cannot be met by the selected record keeping, surface the mismatch.
 
-#### Layer 2 — Question-and-answer log
+At RK3 and above, add all in-scope tasks and questions, what has been answered or completed, and what remains. Include the current framing, scores, constraints, and completion criteria where applicable. Use this account to expose omissions and support follow-through.
 
-Maintain a separate, append-only `conversation-log.md`. Log substantive questions arising from either participant and a very concise summary of each answer or consequence. Include questions that remain unanswered; exclude rhetorical questions and routine acknowledgments.
-
-Give each question a stable identifier. When an answer arrives later, append an entry referencing that question. When an answer changes, append the correction and its consequence with a reference to the earlier entry; do not rewrite the historical answer. Link evidence or artifacts when useful instead of copying them into the log. Keep this layer focused on questions and answers rather than a transcript or a log of every tool operation.
-
-#### Layer 3 — State of things
-
-Maintain a mutable `state-of-things.md` listing all in-scope tasks and questions, what has been answered or completed, and what remains. Use it to expose omissions and support rigorous follow-through without reconstructing the log. Include the current framing, scores, constraints, and completion criteria where applicable.
-
-For each task or question, maintain a stable identifier, its current status, a concise current answer or outcome where available, and the next action or blocker where needed. Use these statuses as applicable:
+For each task or question, maintain a stable identifier, current status, a concise current answer or outcome where available, and the next action or blocker where needed. Use these statuses as applicable:
 
 - **Open:** Still requires an answer or action.
 - **In progress:** Work is underway.
@@ -90,27 +82,37 @@ For each task or question, maintain a stable identifier, its current status, a c
 - **Closed by user:** The user explicitly marked it done or waived further work. Preserve any partial answer and unresolved uncertainty; do not relabel it as answered.
 - **Excluded/deferred:** Outside the current scope or postponed; record the reason and whether the user agreed or the change is merely proposed.
 
-Update this document as answers, decisions, scope, and statuses change. Reopen an item if later evidence invalidates its answer. Use the same question identifiers in the log when layer 2 is active. Treat the state document as the current account and the log as the historical account.
+Update answers, decisions, scope, and statuses as they change. Reopen an item if later evidence invalidates its answer. Use the same question identifiers in the inquiry log when it exists. Treat the state document as the current account and the log as the historical account.
 
-Use the state document to identify unfinished work at pauses, handoffs, and closure. The closure score governs the obligation to finish; the record must still show remaining questions even when the exchange can legitimately stop.
+At RK3 and above, identify unfinished work at pauses, handoffs, and closure. The closure score governs the obligation to finish; the record must still show remaining questions even when the exchange can legitimately stop.
 
-#### Layer 4 — Proposed knowledge summary
+#### Inquiry log
 
-At the end of RK5 work, produce a very concise summary of what was learned and present it to the user for approval. Propose one or more knowledge leaves only where the findings warrant them. Distinguish reusable findings from context-specific conclusions, and preserve consequential uncertainty. Do not invent a lesson or force a leaf when nothing warrants retention; say so briefly.
+At RK4 and RK5, maintain a separate, append-only `inquiry-log.md`. Make it machine-oriented through consistent entry structure and explicit references, while keeping its text readable. Its purpose is to preserve question-and-answer history for retrieval or reconstruction; narrative flow is secondary.
+
+Log substantive questions arising from either participant and a very concise summary of each answer or consequence. Include unanswered questions; exclude rhetorical questions and routine acknowledgments. Use a consistent entry structure containing an entry identifier, the question identifier, the question or reference to it, and the answer or consequence if available.
+
+When an answer arrives later, append an entry referencing its question. When an answer changes, append the correction and its consequence with a reference to the earlier entry; do not rewrite the historical answer. Link evidence or artifacts when useful instead of copying them. Keep the log focused on inquiry rather than a transcript or a log of every tool operation.
+
+#### Artifacts
+
+Create and retain code, plots, reports, data, or other artifacts when the task requires them, regardless of RK level. Choose formats suited to their intended use. At RK2 and above, reference consequential artifacts from `state-of-things.md`; at RK4 and RK5, also link them from the inquiry-log entries they support. Preserve the relevant inputs, methods, conditions, and limitations to the extent required by rigor and the artifact's intended use. Do not duplicate artifact contents in the records.
+
+At the end of RK5 work, produce `knowledge-summary.md`: a very concise proposal of what was learned, marked **proposed** and kept outside the KB. Propose one or more knowledge leaves only where findings warrant them. Distinguish reusable findings from context-specific conclusions and preserve consequential uncertainty. Do not force a lesson or leaf when nothing warrants retention; record that finding briefly.
 
 Before presenting the summary, inspect `state-of-things.md`. Alert the user if any questions remain unanswered, including those blocked, deferred, or closed by the user without an answer. Distinguish outstanding obligations from explicitly waived or excluded work. Do not imply that an incomplete investigation supports settled knowledge.
 
-Present the concise proposal immediately, then end with an explicit invitation such as: “Would you like to work on this knowledge summary, or approve it as written?” Let the user request elaboration rather than producing full leaves by default. Keep any saved draft in `knowledge-summary.md`, marked **proposed**, outside the KB. Do not treat silence as approval or promote the proposal into the KB without the user's approval. If the user requests revisions, retain its proposed status until approved.
+Present the concise proposal immediately, then end with an explicit invitation such as: “Would you like to work on this knowledge summary, or approve it as written?” Let the user request elaboration rather than producing full leaves by default. Do not treat silence as approval or promote the proposal into the KB without the user's approval. If the user requests revisions, retain its proposed status until approved.
 
 #### Storage, maintenance, and pushback
 
-Follow the environment's storage rules and existing project conventions. Otherwise keep the active layers together in `records/<task-slug>/`, outside the KB, using the filenames above. Reuse existing records for the same work and state the chosen location once. Link artifacts rather than duplicating them; do not introduce additional structure without a practical need.
+Follow the environment's storage rules and existing project conventions. Otherwise keep the maintained documents together in `records/<task-slug>/`, outside the KB, using the filenames above. Keep artifacts in their appropriate project locations and link them from the records. Reuse existing records for the same work and state the chosen location once. Do not introduce additional structure without a practical need.
 
-Update active layers at meaningful changes and before handoff or closure. The question log is append-only; the conversation summary and state of things are mutable. At RK5, layer 4 is produced at the end, not after every turn. If work resumes after a knowledge proposal, revisit it at the next closure and make any changes explicit.
+Update documents at meaningful changes and before handoff or closure. The inquiry log is append-only; the state of things is mutable. At RK5, produce the knowledge summary at the end, not after every turn. If work resumes after a knowledge proposal, revisit it at the next closure and make any changes explicit.
 
-When RK increases, establish the newly required layers from available evidence and identify gaps in historical coverage. Do not invent missing history. When RK decreases, stop maintaining the deselected layers without deleting existing records merely to match the score.
+When RK increases, establish newly required documents or sections from available evidence and identify gaps in historical coverage. Do not invent missing history. When RK decreases, stop maintaining records no longer required without deleting existing documents merely to match the score.
 
-If the selected layers cannot support the expected continuity or review, explain the gap and propose a different RK score. Honor the user's override. If persistent storage is unavailable or a write fails, report the limitation and preserve the available notes in the conversation for recovery; do not claim that they were saved elsewhere.
+If the selected documents cannot support the expected continuity or review, explain the gap and propose a different RK score. Honor the user's override. If persistent storage is unavailable or a write fails, report the limitation and preserve the available notes in the conversation for recovery; do not claim that they were saved elsewhere.
 
 ### Closure — C
 
