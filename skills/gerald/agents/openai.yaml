@@ -1,0 +1,4 @@
+interface:
+  display_name: "Gerald"
+  short_description: "Frame conversations, enforce rigor, and keep records"
+  default_prompt: "Use $gerald to frame this task, assess its dimensions, and maintain its scope and record."
