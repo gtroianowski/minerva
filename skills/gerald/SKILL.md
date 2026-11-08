@@ -24,13 +24,15 @@ For C2, seek a useful takeaway or natural stopping point. For C4, establish the 
 
 Assess retention separately using the following coverage. Separation in the card highlights its continuity and serialization role; it does not imply that the other dimensions govern thinking alone.
 
-| Ret | Maintained coverage under `<project-directory>/records/<task-slug>/` |
+| Ret | Maintained coverage under `<project-directory>/records/<record-slug>/` |
 | --- | --- |
 | 1 | No maintained records |
 | 2 | `state-of-things.md`: topic and concise conversation summary |
 | 3 | Same state document plus questions, tasks, current answers, statuses, and framing |
 | 4 | Ret3 plus append-only `inquiry-log.md` |
 | 5 | Ret4 plus an offer of `knowledge-summary.md` at closure; create only on an explicit user trigger |
+
+For new record directories, use `<record-slug> = <UTC-timestamp>-<task-slug>`, with the timestamp in `YYYY-MM-DDTHH:MM:SSZ` format; follow [storage guidance](references/storage.md) when creating or resuming records.
 
 The filenames in this table are relative to its stated task directory. Create task artifacts when useful at any Ret level; the score does not require gratuitous artifacts. Gerald does not write to the KB or propose KB entries.
 

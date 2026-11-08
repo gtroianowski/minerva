@@ -9,10 +9,16 @@ For Codex, use the definition supplied in the loaded project instruction file (n
 1. Obtain the meaning of `<project-directory>` from the base project instructions before the first project resource operation. Reuse a definition already in context; do not repeatedly reread it.
 2. If the definition is missing, ambiguous, or conflicting, ask only for the missing definition and pause dependent resource operations. Do not infer a Library folder or local root from the project name or current working directory.
 3. Resolve the logical resource through the tools appropriate to the defined destination. Reuse verified file and folder identities where the tools require them; these are access details, not an additional Gerald configuration or mapping registry.
-4. Retain records and task artifacts under `<project-directory>/records/<task-slug>/`. Reuse the same task directory across conversations and stages; identify the existing undertaking before creating a new directory. State the chosen logical location once.
+4. Retain records and task artifacts under `<project-directory>/records/<record-slug>/`. Reuse the same task directory across conversations and stages; identify the existing undertaking before creating a new directory. State the chosen logical location once.
 5. If the destination is inaccessible or a write fails, report the limitation and preserve available recovery notes in the conversation. Do not silently save to a different destination, create divergent copies, or claim a save succeeded.
 
 Keep other project resource references under the same convention, for example `<project-directory>/knowledge-base/…` or `<project-directory>/tools/…`. This defines how paths are interpreted; it does not authorize Gerald to write knowledge entries or add tools.
+
+## Record directory names
+
+For a new undertaking, construct `<record-slug>` as `<UTC-timestamp>-<task-slug>`. Obtain the current UTC time when first creating its record directory, using exactly `YYYY-MM-DDTHH:MM:SSZ` (24-hour clock, seconds, literal `Z`), followed by a hyphen and a concise descriptive task slug. For example: `2026-11-08T18:30:00Z-gerald-introduction`. Keep the colons and literal `T` and `Z`.
+
+Keep this directory name fixed across updates, pauses, resumptions, and stage changes. Reuse existing directories, including older names without a timestamp; do not rename them or create a new timestamped directory merely to adopt this convention.
 
 ## Renames, moves, and resumption
 

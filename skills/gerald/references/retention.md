@@ -4,7 +4,7 @@ Keep records concise and distinguish user requirements, agreed decisions, propos
 
 ## State of things
 
-Maintain a mutable, human-readable `<project-directory>/records/<task-slug>/state-of-things.md`, organized for humans and agents alike. Make it understandable without consulting the inquiry log. Include the general topic and a concise conversation summary: purpose, important context, direction, and substantive decisions or changes of direction. Keep this account **current** and **concise**; it reflects the state of things rather than the path that led to it. 
+Maintain a mutable, human-readable `<project-directory>/records/<record-slug>/state-of-things.md`, organized for humans and agents alike. Make it understandable without consulting the inquiry log. Include the general topic and a concise conversation summary: purpose, important context, direction, and substantive decisions or changes of direction. Keep this account **current** and **concise**; it reflects the state of things rather than the path that led to it. 
 
 Let Ret determine how much state must persist, and let the other scores shape its contents: breadth determines scope, depth the explanatory detail needed, rigor the evidence and uncertainty, and closure the completion criteria and unfinished obligations. At Ret2, a topic and summary suffice; higher scores in other dimensions do not silently raise Ret. If their needs cannot be met by the selected retention, surface the mismatch.
 
@@ -25,7 +25,7 @@ At Ret3 and above, identify unfinished work at pauses, handoffs, and closure. Th
 
 ## Artifacts
 
-Choose artifact formats suited to their intended use. At Ret2 and above, reference consequential artifacts from `<project-directory>/records/<task-slug>/state-of-things.md`. Preserve the relevant inputs, methods, conditions, and limitations to the extent required by rigor and the artifact's intended use. Link rather than duplicate artifact contents.
+Choose artifact formats suited to their intended use. At Ret2 and above, reference consequential artifacts from `<project-directory>/records/<record-slug>/state-of-things.md`. Preserve the relevant inputs, methods, conditions, and limitations to the extent required by rigor and the artifact's intended use. Link rather than duplicate artifact contents.
 
 ## Resumption in every mode
 

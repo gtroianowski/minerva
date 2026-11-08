@@ -1,6 +1,6 @@
 # Inquiry log — Ret4 and Ret5
 
-At Ret4 and Ret5, maintain an append-only `<project-directory>/records/<task-slug>/inquiry-log.md` as a simple timeline. Use a consistent entry structure containing only:
+At Ret4 and Ret5, maintain an append-only `<project-directory>/records/<record-slug>/inquiry-log.md` as a simple timeline. Use a consistent entry structure containing only:
 
 - A timestamp, with timezone.
 - A concise representation of a substantive question as understood by the agent at that time, when applicable.
