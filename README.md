@@ -1,4 +1,10 @@
-# Notes
+
+
+
+
+
+
+# Setup notes
 
 There's a misalignment between the handling of project directory in codex (based on the filesystem) and in the ChatGPT app (using a library system not accessible as a filesystem AFAIK). So for now, we'll use the specific instructions.
 
