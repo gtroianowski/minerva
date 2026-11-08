@@ -1,0 +1,7 @@
+# Knowledge summary — Ret5
+
+At Ret5, when all in-scope questions have been addressed or the user indicates readiness to end the work, automatically offer to create a knowledge summary. Include one sentence describing what the proposed summary would capture. Create `<project-directory>/records/<task-slug>/knowledge-summary.md` only when the user explicitly requests it or accepts the offer; reaching closure alone does not authorize creation. Do not repeat an unchanged offer after the user declines it.
+
+Before offering or creating the summary, inspect `<project-directory>/records/<task-slug>/state-of-things.md` and disclose unanswered questions, including blocked or deferred items. Identify which remain obligations and which the user explicitly waived or excluded. Do not imply that an incomplete investigation supports settled knowledge.
+
+When requested, write a very concise account of what was learned under `<project-directory>/records/<task-slug>/`. Distinguish reusable findings from context-specific conclusions and preserve consequential uncertainty. If nothing warrants retention as knowledge, record that briefly in `<project-directory>/records/<task-slug>/state-of-things.md` and tell the user instead of creating an empty summary or requesting approval. Do not create knowledge leaves or request approval to incorporate findings into the KB; that belongs to the separate skill.
