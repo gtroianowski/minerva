@@ -1,3 +1,15 @@
+# RFC review context
+
+Status: under review; migration commentary added 2026-11-24.
+
+Original location: `musings/core/knowledge-classification.md`.
+
+This document preserves the provisional classification agreement and its open decisions. It is a candidate foundation for knowledge leaves, not a complete strict schema or an implemented validator. The librarian authoring guide builds on it. Review it within the semi-directed accumulation approach; do not import the shelved bootstrap ontology as an additional requirement.
+
+The source text below is preserved unchanged. Historical role names and status statements are retained for review; they do not establish current instructions.
+
+---
+
 # Knowledge Classification and Agent Treatment
 
 **Status:** Provisional design agreement  

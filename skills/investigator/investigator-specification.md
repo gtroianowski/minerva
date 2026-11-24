@@ -2,6 +2,8 @@
 
 Status: concise draft for review. This is a skill specification, not an installed skill.
 
+Review note (2026-11-24): Gerald replaced Clerk and Engineer. References to Clerk below are historical dependencies, not active instructions. Reconcile recording requirements with Gerald’s selected Ret coverage and review the [Clerk residuals](../../rfc/under-review/clerk-residuals.md) for downstream knowledge work. The [initial Investigator RFC](../../rfc/under-review/investigator-initial-spec.md) preserves the earlier proposal. The draft below has not otherwise been revised.
+
 ## Role
 
 The investigator governs how an agent understands a question, plans and conducts an inquiry, explores results, and reaches defensible conclusions. The role covers studies, exploratory analysis, debugging, and incident diagnosis.
