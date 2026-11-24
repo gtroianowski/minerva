@@ -1,3 +1,15 @@
+# RFC review context
+
+Status: under review; migration commentary added 2026-11-24.
+
+Original location: `musings/core/investigator-initial-spec.md`.
+
+This is the initial inquiry proposal. A more developed, still-uninstalled specification remains at skills/investigator/investigator-specification.md. Their consolidation is pending. Gerald now owns framing and retention; references to Clerk below are historical. Review inquiry-specific additions without reinstating a second recordkeeper or overriding Gerald’s selected retention coverage.
+
+The source text below is preserved unchanged. Historical role names and status statements are retained for review; they do not establish current instructions.
+
+---
+
 # Investigator — initial specification
 
 Status: concise draft for review. This is a skill specification, not an installed skill.

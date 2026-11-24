@@ -1,3 +1,15 @@
+# RFC review context
+
+Status: under review; migration commentary added 2026-11-24.
+
+Original location: `musings/core/general-directions.md`.
+
+This is the next-step knowledge-system direction, downstream of Gerald’s serialized records. Gerald replaced Engineer and Clerk; references to Clerk below describe historical responsibilities, not an active skill. The current direction is semi-directed accumulation: the user conveys the KB’s objective function, and project-specific judgments of useful knowledge are refined through user feedback. Retrieval should expose breadcrumbs showing what informed an answer so the user can inspect and debug it. These directions do not adopt a promotion protocol or strict schema. The automated bootstrap alternative is shelved in the graveyard.
+
+The source text below is preserved unchanged. Historical role names and status statements are retained for review; they do not establish current instructions.
+
+---
+
 # Knowledge and investigation system — general directions
 
 Status: concise direction-setting draft, capturing this discussion. Suggestions are distinguished from the user's proposed design.
